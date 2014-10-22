@@ -16,7 +16,8 @@
 			pageSize: 10,
 			currentPage: 1,
 			holder: null,
-			pagerLocation: "after"
+			pagerLocation: "after",
+			pagerAlign: 'center'
 		};
 		
 		var options = $.extend(defaults, options);
@@ -53,7 +54,7 @@
 			}
 			
 			//Build pager navigation
-			var pageNav = "<ul class='simplePagerNav'>";	
+			var pageNav = '<div style="text-align:'+options.pagerAlign+';"><ul class="simplePagerNav pagination">';	
 			for (i=1;i<=pageCounter;i++){
 				if (i==options.currentPage) {
 					pageNav += "<li class='currentPage simplePageNav"+i+"'><a rel='"+i+"' href='#'>"+i+"</a></li>";	
@@ -62,7 +63,7 @@
 					pageNav += "<li class='simplePageNav"+i+"'><a rel='"+i+"' href='#'>"+i+"</a></li>";
 				}
 			}
-			pageNav += "</ul>";
+			pageNav += "</ul></div>";
 			
 			if(!options.holder) {
 				switch(options.pagerLocation)
