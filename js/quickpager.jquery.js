@@ -10,7 +10,7 @@
 
 (function($) {
 	    
-	$.fn.quickPager = function(options) {
+	$.fn.quickPagination = function(options) {
 	
 		var defaults = {
 			pageSize: 10,
